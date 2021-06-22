@@ -21,7 +21,7 @@ sudo docker tag ${tagId} ${nexusPath}:${nexusPort}/${imageName}:${imageVersion}
 sudo docker push ${nexusPath}:${nexusPort}/${imageName}:${imageVersion}
 ```
 
-### Remove Tag
+### Remove tag
 ```bash
 sudo docker rmi ${nexusPath}:${nexusPort}/${imageName}:${imageVersion}
 ```

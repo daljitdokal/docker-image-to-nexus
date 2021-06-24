@@ -7,6 +7,7 @@ export imageName="xxxx";
 export imageVersion="xxxx";
 export nexusPath="xxxx";
 export nexusPort="xxxx";
+export serverName="xxxx";
 
 # Fetch image from dockerhub
 sudo docker pull ${imageName}:${imageVersion}
@@ -25,3 +26,7 @@ sudo docker push ${nexusPath}:${nexusPort}/${imageName}:${imageVersion}
 ```bash
 sudo docker rmi ${nexusPath}:${nexusPort}/${imageName}:${imageVersion}
 ```
+
+# Migrate Docker image from one server to another with ssh
+```bash
+docker save ${nexusPath}:${nexusPort} | ssh ${serverName} 'docker load'
